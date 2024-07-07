@@ -4,6 +4,8 @@
  */
 package proyecto2karelinjoseph;
 
+import proyecto2karelinjoseph.Interfaces.MenuInicial;
+
 /**
  *
  * @author karelin
@@ -15,6 +17,11 @@ public class Proyecto2KarelinJoseph {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        TablaHash tablaHash = new TablaHash(20);
+        TablaHashPyA tablaAutores = new TablaHashPyA(60);
+        TablaHashPyA tablaClaves = new TablaHashPyA (100);
+        FuncionesAdicionales funciones = new FuncionesAdicionales(tablaHash, tablaAutores, tablaClaves);
+        MenuInicial menu= new MenuInicial(tablaHash, tablaAutores, tablaClaves);
     }
     
 }
