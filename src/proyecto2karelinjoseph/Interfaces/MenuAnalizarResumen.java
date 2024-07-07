@@ -22,8 +22,8 @@ public class MenuAnalizarResumen extends javax.swing.JFrame {
         this.setVisible(true);
         this.menu = menu;
         this.tabla = menu.getTablaHash();
-        for (int i = 0; i < tabla.size; i++) {
-            String[] titulos = tabla.archivosResumen[i].mostrar();
+        for (int i = 0; i < tabla.getSize(); i++) {
+            String[] titulos = tabla.getArchivosResumen()[i].mostrar();
             for (int j = 0; j < titulos.length; j++) {
                 this.resumenes.addItem(titulos[j]);
 

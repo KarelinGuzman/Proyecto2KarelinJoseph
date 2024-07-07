@@ -6,7 +6,7 @@ package proyecto2karelinjoseph.Interfaces;
 
 /**
  *
- * @author andre
+ * @author karelin
  */
 public class MenuGuardar extends javax.swing.JFrame {
 
@@ -15,6 +15,7 @@ public class MenuGuardar extends javax.swing.JFrame {
      */
     public MenuGuardar() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

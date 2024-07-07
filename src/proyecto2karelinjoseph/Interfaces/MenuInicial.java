@@ -4,17 +4,40 @@
  */
 package proyecto2karelinjoseph.Interfaces;
 
+import proyecto2karelinjoseph.TablaHash;
+import proyecto2karelinjoseph.TablaHashPyA;
+
 /**
  *
- * @author andre
+ * @author karelin
  */
 public class MenuInicial extends javax.swing.JFrame {
+
+    public static TablaHash tablahASH;
+    public static TablaHashPyA tablaAutores;
+    public static TablaHashPyA tablaKeys;
+
+    public TablaHashPyA getTablaKeys() {
+        return tablaKeys;
+    }
 
     /**
      * Creates new form MenuInicial
      */
-    public MenuInicial() {
+    public MenuInicial(TablaHash tablahASH, TablaHashPyA tablaAutores, TablaHashPyA tablaKeys) {
+        this.tablahASH = tablahASH;
+        this.tablaAutores = tablaAutores;
+        this.tablaKeys = tablaKeys;
         initComponents();
+        this.setVisible(true);
+    }
+
+    public TablaHash getTablaHash() {
+        return this.tablahASH;
+    }
+
+    public TablaHashPyA getTablaAutores() {
+        return this.tablaAutores;
     }
 
     /**
@@ -30,7 +53,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -47,25 +70,40 @@ public class MenuInicial extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 51, 51));
-        jButton1.setText("Agregar Resumen");
+        jButton1.setText("Analizar un Resumen");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 51, 51));
-        jButton2.setText("Agregar Resumen");
+        jButton2.setText("Buscar un Resumen");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 51, 51));
-        jButton3.setText("Agregar Resumen");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
+        Guardar.setBackground(new java.awt.Color(255, 255, 255));
+        Guardar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Guardar.setForeground(new java.awt.Color(0, 51, 51));
+        Guardar.setText("Guardar");
+        jPanel1.add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 51, 51));
-        jButton4.setText("Agregar Resumen");
+        jButton4.setText("Agregar un Resumen");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
@@ -78,6 +116,24 @@ public class MenuInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        MenuAgregarResumen agregar = new MenuAgregarResumen(this);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        MenuAnalizarResumen analisis = new MenuAnalizarResumen(this);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        MenuBusquedaResumen menuB = new MenuBusquedaResumen(this);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,15 +165,15 @@ public class MenuInicial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuInicial().setVisible(true);
+                new MenuInicial(tablahASH, tablaAutores, tablaKeys).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Guardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

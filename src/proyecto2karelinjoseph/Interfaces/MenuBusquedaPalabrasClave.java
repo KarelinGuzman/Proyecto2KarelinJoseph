@@ -4,17 +4,24 @@
  */
 package proyecto2karelinjoseph.Interfaces;
 
+import proyecto2karelinjoseph.Lista;
+import proyecto2karelinjoseph.TablaHashPyA;
+
 /**
  *
- * @author andre
+ * @author karelin
  */
 public class MenuBusquedaPalabrasClave extends javax.swing.JFrame {
-
+    public static MenuInicial menu;
+    public TablaHashPyA tabla;
     /**
      * Creates new form MenuBusquedaPalabrasClave
      */
-    public MenuBusquedaPalabrasClave() {
+    public MenuBusquedaPalabrasClave(MenuInicial menu) {
         initComponents();
+        this.setVisible(true);
+        this.menu = menu;
+        tabla = this.menu.getTablaKeys();
     }
 
     /**
@@ -26,21 +33,127 @@ public class MenuBusquedaPalabrasClave extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        resumenes = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        key = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setText("Ingrese la palabra clave:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 51, 51));
+        jButton4.setText("Buscar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+
+        resumenes.setBackground(new java.awt.Color(255, 255, 255));
+        resumenes.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        resumenes.setForeground(new java.awt.Color(0, 51, 51));
+        jPanel1.add(resumenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 400, 40));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 51, 51));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, -1, 350));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel2.setText("PALABRAS CLAVE");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel3.setText("BUSCAR POR ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        key.setBackground(new java.awt.Color(255, 255, 255));
+        key.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        key.setForeground(new java.awt.Color(0, 51, 51));
+        jPanel1.add(key, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 300, 40));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel4.setText("Resumenes:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 51, 51));
+        jButton5.setText("Analizar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
+
+        Guardar.setBackground(new java.awt.Color(255, 255, 255));
+        Guardar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Guardar.setForeground(new java.awt.Color(0, 51, 51));
+        Guardar.setText("Regresar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String palabraClave = this.key.getText().toLowerCase();
+        try{
+            Lista lista = this.tabla.buscar(palabraClave);
+            this.resumenes.removeAllItems();
+            String[] titulos = lista.mostrar();
+            for (int i = 0; i < titulos.length; i++) {
+                this.resumenes.addItem(titulos[i]);
+            }
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        String titulo = this.resumenes.getSelectedItem().toString().toLowerCase();
+        try{
+            this.jTextArea1.setText(this.menu.getTablaHash().buscarPorTitulo(titulo).analizarArchivo());
+        }catch(Exception e){}
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+        // TODO add your handling code here:
+        this.menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,11 +185,23 @@ public class MenuBusquedaPalabrasClave extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuBusquedaPalabrasClave().setVisible(true);
+                new MenuBusquedaPalabrasClave(menu).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Guardar;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField key;
+    private javax.swing.JComboBox<String> resumenes;
     // End of variables declaration//GEN-END:variables
 }
