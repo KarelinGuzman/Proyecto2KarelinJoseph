@@ -53,7 +53,6 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        Guardar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -88,12 +87,6 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
-
-        Guardar.setBackground(new java.awt.Color(255, 255, 255));
-        Guardar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        Guardar.setForeground(new java.awt.Color(0, 51, 51));
-        Guardar.setText("Guardar");
-        jPanel1.add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -171,7 +164,6 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Guardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
