@@ -37,9 +37,9 @@ public class TablaHashPyA {
         if (this.count == this.size) {
             this.aumentarTabla();
         }
-        int hash = this.hash(palabra);
+        int hash = this.hash(palabra.toLowerCase());
 
-        if (this.archivosResumen[hash].key.equals(palabra) || this.archivosResumen[hash].key.equals("")) {
+        if (this.archivosResumen[hash].key.toLowerCase().equals(palabra.toLowerCase()) || this.archivosResumen[hash].key.equals("")) {
             this.archivosResumen[hash].insertar(archivo);
             this.archivosResumen[hash].key = palabra;
 
@@ -68,7 +68,7 @@ public class TablaHashPyA {
         }
         for (int i = 0; i < this.size; i++) {
             if (!this.archivosResumen[i].key.equals("")) {
-                int hash = this.hash(this.archivosResumen[i].key);
+                int hash = this.hash(this.archivosResumen[i].key.toLowerCase());
                 if (archivosResumenAgrandada[hash] == null) {
                     archivosResumenAgrandada[hash] = this.archivosResumen[i];
                 } else {
@@ -83,5 +83,21 @@ public class TablaHashPyA {
             }
         }
 
+    }
+    
+    public Lista buscar(String palabra){
+        int hash = this.hash(palabra.toLowerCase());
+        if(this.archivosResumen[hash].key.toLowerCase().equals(palabra.toLowerCase())){
+            return this.archivosResumen[hash];
+        }else{
+            while(!this.archivosResumen[hash].key.toLowerCase().equals(palabra.toLowerCase())){
+                if(hash == this.size -1){
+                    hash = 0;
+                }else{
+                    hash += 1;
+                }           
+            }
+            return this.archivosResumen[hash];
+        }
     }
 }
